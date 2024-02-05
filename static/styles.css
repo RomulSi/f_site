@@ -1,5 +1,28 @@
+body{
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%
+}
 h1 {
   font-family: "Protest Riot", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+ul.mainmenu{
+    list-style: square;
+    background: rgba(0,255,128, 0.2);
+    height: 80px;
+    font-size: 20px;
+    overflow: hidden;
+}
+ul.mainmenu li{
+    float: left;
+    margin: 28px 50vh 0 50px;
+}
+div.content{
+    margin:28px 50vh 0 50px;
 }

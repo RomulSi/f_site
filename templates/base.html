@@ -15,13 +15,13 @@
 <body>
 {% block content -%}
     {%- block mainmenu -%}
-        <ul>
+        <ul class="mainmenu">
             {% for m in menu %}
             <li> {{m}}</li>
             {% endfor %}
         </ul>
     {%- endblock mainmenu -%}
-
+<div class="content">
     {% if title %}
         <h1>{{ title }}</h1>
     {% else %}
@@ -29,6 +29,6 @@
     {% endif %}
 
 {% endblock -%}
-
+</div>
 </body>
 </html>
