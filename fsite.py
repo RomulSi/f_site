@@ -1,8 +1,10 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 
 app = Flask(__name__)
 
-menu = ["Install", "First app", "Feedback"]
+menu = [{"name": "Install", "url":"install-flask"},
+        {"name": "First app", "url": "first-app"},
+        {"name": "Feedback", "url": "contact"}]
 
 @app.route("/index")
 @app.route("/")
@@ -15,6 +17,13 @@ def index():
 def about():
     print(url_for('about'))
     return render_template('about.html', title="About Site", menu=menu)
+
+@app.route("/contact", methods=["POST", "GET"])
+def contact():
+    if request.method == 'POST':
+        print(request.form)
+
+    return render_template('contact.html', title="Feedback", menu=menu)
 
 @app.route("/profile/<path:username>")
 def profile(username):
