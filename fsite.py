@@ -1,6 +1,8 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, flash
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'fdaskjfsdkhfsakflksdlk'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 
 menu = [{"name": "Install", "url":"install-flask"},
         {"name": "First app", "url": "first-app"},
@@ -21,7 +23,10 @@ def about():
 @app.route("/contact", methods=["POST", "GET"])
 def contact():
     if request.method == 'POST':
-        print(request.form)
+        if len(request.form['username']) > 2:
+            flash('Message sent', category="success")
+        else:
+            flash('Message not sent', category="error")
 
     return render_template('contact.html', title="Feedback", menu=menu)
 

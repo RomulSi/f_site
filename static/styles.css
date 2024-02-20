@@ -14,7 +14,7 @@ h1 {
 }
 ul.mainmenu{
     list-style: square;
-    background: rgba(0,255,128, 0.2);
+    background: rgba(27, 167, 98, 0.2);
     height: 80px;
     font-size: 20px;
     overflow: hidden;
@@ -25,4 +25,13 @@ ul.mainmenu li{
 }
 div.content{
     margin:28px 50vh 0 50px;
+}
+.flash{padding: 10px;}
+.flash.success{
+    border: 1px solid #108126;
+    background: #18d03a;
+}
+.flash.error{
+    border: 1px solid #730a12;
+    background: #c5112a;
 }
